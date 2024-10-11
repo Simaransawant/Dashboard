@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+}
+
+.sidebar {
+    height: 100vh;
+    /* Remove overflow-y to prevent additional scrollbar */
+}
+
+main {
+    height: calc(100vh - 56px); /* Adjust for header height */
+    overflow-y: auto; /* Allow scrolling only in main */
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    #sidebar {
+        display: none; /* Hide sidebar on small screens */
+    }
+}

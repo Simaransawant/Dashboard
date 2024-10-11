@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMcU8zZwiU7DjqX55e6N28kD/4+8aMech7M1FJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo"> <!-- Replace with your logo -->
+            <h2>Dashboard</h2>
+        </div>
+        <ul>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="navbar">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="navbar-icons">
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-moon" id="darkModeToggle"></i>
+                <div class="profile" id="profileDropdown">
+                    <img src="profile.jpg" alt="Profile" class="profile-img"> <!-- Replace with your profile image -->
+                    <div class="dropdown-content" id="profileMenu">
+                        <a href="#">Profile</a>
+                        <a href="#">Inbox</a>
+                        <a href="#">Chat</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- First Card: Sales Card (Small Card) -->
+            <div class="small-card sales-card">
+                <h3>Congratulations John! 🥳</h3>
+                <p>Best seller of the month</p>
+                <h2>$42.8k</h2>
+                <button class="view-btn">View Sales</button>
+                <img src="img/win trophy.png" alt="Trophy" class="trophy-img">
+            </div>
+        
+            <!-- Second Card: Statistics Card (Larger Card) -->
+            <div class="statistics-card">
+                <h3>Statistics Card</h3>
+                <p>Total 48.5% growth 😎 this month</p>
+                <div class="stats">
+                    <div class="stat-item purple-bg">
+                        <div class="stat-icon">📈</div>
+                        <div>
+                            <h4>Sales</h4>
+                            <p>245k</p>
+                        </div>
+                    </div>
+                    <div class="stat-item green-bg">
+                        <div class="stat-icon">👥</div>
+                        <div>
+                            <h4>Customers</h4>
+                            <p>12.5k</p>
+                        </div>
+                    </div>
+                    <div class="stat-item blue-bg">
+                        <div class="stat-icon">📦</div>
+                        <div>
+                            <h4>Products</h4>
+                            <p>1.54k</p>
+                        </div>
+                    </div>
+                    <div class="stat-item yellow-bg">
+                        <div class="stat-icon">💰</div>
+                        <div>
+                            <h4>Revenue</h4>
+                            <p>$88k</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+            <div class="big-cards">
+                
+
+                <div class="card">
+                    <div class="container">
+                      <h3>Weekly Overview</h3>
+                      <span style="float: right; margin-top: 10px;"><i class="fas fa-ellipsis-v"></i></span>
+                    </div>
+                    <div class="container">
+                      <canvas class="chart" id="myChart"></canvas>
+                    </div>
+                    <div class="container">
+                        <b>45%</b>
+                      <p>Your sales performance is <br> 😎 better compared to last month</p>
+                    </div>
+                    <div class="container">
+                      <button class="button">DETAILS</button>
+                    </div>
+                </div>
+               
+
+                <div class="big-card">
+                    <h3>Total Earning</h3>
+                    <p>$24,895</p>
+                    <p>10% Compared to $84,325 last year</p>
+                    <div class="earning-details">
+                        <div>
+                            <strong>Zipcar</strong>
+                            <p>$24,895.65</p>
+                        </div>
+                        <div>
+                            <strong>Bitbank</strong>
+                            <p>$8,650.20</p>
+                        </div>
+                        <div>
+                            <strong>Aviato</strong>
+                            <p>$1,245.80</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="small-cards">
+                <div class="small-card">
+                    <h3>Total Profit</h3>
+                    <p>$25.6k</p>
+                    <p>+42%</p>
+                </div>
+                <div class="small-card">
+                    <h3>Weekly Profit</h3>
+                    <p>Refunds</p>
+                    <p>$78</p>
+                    <p>-15%</p>
+                </div>
+                <div class="small-card">
+                    <h3>New Project</h3>
+                    <p>862</p>
+                    <p>-18%</p>
+                </div>
+                <div class="small-card">
+                    <h3>Sales Queries</h3>
+                    <p>15</p>
+                    <p>-18%</p>
+                </div>
+            </div>
+
+            <div class="big-cards">
+                <div class="big-card">
+                    <h3>Sales by Countries</h3>
+                    <div class="graph-placeholder">
+                        <ul class="country-sales">
+                                <img src="img/usa-logo.png" alt="USA Logo" class="country-logo"> <!-- Add correct path for logos -->
+                                <div class="sales-info">
+                                    <p>$8,656k</p>
+                                    <p>25.8%</p>
+                                    <p>USA: 894k Sales</p>
+                                </div>
+                                <img src="img/uk-logo.png" alt="UK Logo" class="country-logo">
+                                <div class="sales-info">
+                                    <p>$2,415k</p>
+                                    <p>6.2%</p>
+                                    <p>UK: 645k Sales</p>
+                                </div>
+                                <img src="img/india-logo.png" alt="India Logo" class="country-logo">
+                                <div class="sales-info">
+                                    <p>$865k</p>
+                                    <p>12.4%</p>
+                                    <p>India: 148k Sales</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/japan-logo.png" alt="Japan Logo" class="country-logo">
+                                <div class="sales-info">
+                                    <p>$745k</p>
+                                    <p>11.9%</p>
+                                    <p>Japan: 86k Sales</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/korea-logo.png" alt="Korea Logo" class="country-logo">
+                                <div class="sales-info">
+                                    <p>$45k</p>
+                                    <p>16.2%</p>
+                                    <p>Korea: 42k Sales</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                
+                <div class="big-card">
+                    <h3>Deposit</h3>
+                    <div class="graph-placeholder">Graph Placeholder</div>
+                </div>
+                <div class="big-card">
+                    <h3>Withdraw</h3>
+                    <div class="graph-placeholder">Graph Placeholder</div>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Date</th>
+                        <th>Salary</th>
+                        <th>Age</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>john@example.com</td>
+                        <td>2024-10-11</td>
+                        <td>$5000</td>
+                        <td>28</td>
+                        <td><span class="status-active">Active</span></td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>jane@example.com</td>
+                        <td>2024-10-10</td>
+                        <td>$6000</td>
+                        <td>32</td>
+                        <td><span class="status-inactive">Inactive</span></td>
+                    </tr>
+                    <tr>
+                        <td>Michael Brown</td>
+                        <td>michael@example.com</td>
+                        <td>2024-10-09</td>
+                        <td>$5500</td>
+                        <td>30</td>
+                        <td><span class="status-active">Active</span></td>
+                    </tr>
+                    <tr>
+                        <td>Emily Davis</td>
+                        <td>emily@example.com</td>
+                        <td>2024-10-08</td>
+                        <td>$7000</td>
+                        <td>25</td>
+                        <td><span class="status-active">Active</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <footer>
+                <p>&copy; 2024 Dashboard. All Rights Reserved.</p>
+                <button class="scroll-to-top" onclick="scrollToTop()">⬆</button>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Dark/Light mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+        });
+
+        // Profile dropdown functionality
+        const profile = document.getElementById('profileDropdown');
+        const profileMenu = document.getElementById('profileMenu');
+
+        profile.addEventListener('click', () => {
+            profileMenu.classList.toggle('show');
+        });
+
+        // Close the dropdown if clicked outside
+        window.addEventListener('click', (event) => {
+            if (!profile.contains(event.target)) {
+                profileMenu.classList.remove('show');
+            }
+        });
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

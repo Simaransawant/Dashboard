@@ -1,0 +1,566 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #343a40;
+    color: #fff;
+}
+
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f5f5f5, #dcd2e9);
+    color:black;
+    position: fixed;
+    padding: 20px;
+    overflow-y: auto; /* Scrollable sidebar */
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color:black;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #ce77f4;
+}
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #cd7eef;
+    border-radius: 10px;
+}
+
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6a1b9a;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar .search-bar input {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+    width: 200px;
+}
+
+
+.search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-icons i {
+    margin-left: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.profile .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.profile .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.profile.show .dropdown-content {
+    display: block;
+}
+/* General Styles */
+.content {
+    margin-top: 40px;
+}
+
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1.1em;
+    color: #666;
+}
+
+h2.sales-amount {
+    font-size: 2.5em;
+    color: #6a1b9a;
+    font-weight: bold;
+}
+/* General Layout for Cards */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds space between the cards */
+    margin-top: 20px;
+}
+
+/* First Card: Sales Card (Small Card) */
+.sales-card {
+    /* background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.1);
+    width: 70%; 
+    transition: transform 0.2s;
+}
+
+.small-card h3{
+    font-size: 20px;
+}
+
+.sales-card:hover {
+    transform: translateY(-8px);
+}
+.small-card.sales-card {
+    padding: 20px;
+    /* background-color: #fff; */
+    background: linear-gradient(to bottom, #f5f5f5, #dcd2e9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+}
+.trophy-img {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 90px; /* Increased width */
+    opacity: 0.7;
+}
+
+
+.small-card h2{
+margin-top: 10px;
+font-size: 1.5rem;
+color: rgb(84, 121, 243);
+}
+.small-card p{
+    margin-top: 10px;
+}
+
+.view-btn {
+    background-color: #6a1b9a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1em;
+    margin-top: 30px;
+}
+
+.view-btn:hover {
+    background-color: #4a0072;
+}
+
+.trophy-img {
+    width: 80px;
+    height: auto;
+    float: right;
+}
+
+/* Second Card: Statistics Card (Larger Card) */
+.statistics-card .stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+
+.statistics-card {
+    padding: 25px;
+    /* background: #f5f5f5; */
+    background: linear-gradient(to bottom, #f5f5f5, #dcd2e9);
+
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 54%; /* Larger card size */
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.statistics-card h3{
+    font-size: 20px;
+}
+.statistics-card p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.statistics-card:hover{
+    transform: translateY(-8px);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    /* background-color: #fff; */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 30px;
+    flex: 1;
+    margin: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 24%;
+}
+
+.stat-icon {
+    font-size: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20%;
+    padding: 10px;
+    margin-right: 15px;
+}
+
+.stat-item h4 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Background colors for each stat */
+.purple-bg .stat-icon {
+    background-color: #6a1b9a;
+    color: white;
+}
+
+.green-bg .stat-icon {
+    background-color: #4caf50;
+    color: white;
+}
+
+.blue-bg .stat-icon {
+    background-color: #2196f3;
+    color: white;
+}
+
+.yellow-bg .stat-icon {
+    background-color: #ffeb3b;
+    color: black;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .small-card,
+    .statistics-card {
+        width: 100%; /* Cards stack on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .stat-item {
+        margin-bottom: 20px;
+    }
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 300px;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+    text-align: center;
+  }
+  
+  .button {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 10px;
+    width: 75%;
+    cursor: pointer;
+  }
+  
+  .chart {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 250px;
+    height: 250px;
+  }
+.big-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.big-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.container b{
+    font-size: 40px;
+}
+
+/* Sales by Countries Card */
+.big-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.big-card:hover {
+    transform: translateY(-8px);
+}
+
+.country-sales {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.country-sales li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.country-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 50%; /* Makes the logos circular */
+}
+
+.sales-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.sales-info p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.sales-info p:nth-child(1) {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #6a1b9a;
+}
+
+.sales-info p:nth-child(2) {
+    color: #666;
+}
+
+.sales-info p:nth-child(3) {
+    font-size: 1em;
+    color: #999;
+}
+
+/* Adjust responsive behavior */
+@media (max-width: 768px) {
+    .big-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .country-sales li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .country-logo {
+        margin-bottom: 10px;
+    }
+}
+
+
+.small-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.small-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.small-card:hover {
+    transform: translateY(-5px);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #6a1b9a;
+    color: white;
+}
+
+table td {
+    background-color: #fff;
+}
+
+.status-active {
+    color: green;
+}
+
+.status-inactive {
+    color: red;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: #6a1b9a;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.scroll-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top:hover {
+    background-color: #7b1fa2;
+}
