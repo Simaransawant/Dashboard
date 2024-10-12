@@ -7,6 +7,91 @@ body {
     
     /* Remove overflow-y to prevent additional scrollbar */
 }
+.sidebar {
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.sidebar.d-none {
+    display: none; /* Hide the sidebar on smaller screens */
+}
+
+.sidebar.show {
+    display: block; /* Show the sidebar when 'show' class is added */
+}
+
+/* Optional: Class to control body scrolling */
+body.sidebar-open {
+    overflow: hidden; /* Prevent body scrolling when sidebar is open */
+}
+
+
+/* Sidebar Background and Logo */
+#sidebar {
+    height: 100vh;
+    background-color: #f0f4fa;
+    padding: 20px;
+    width: 230px; /* Adjusted to ensure text fits comfortably */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    margin-bottom: 40px;
+}
+
+/* Navigation Links */
+.nav-link {
+    display: flex;
+    align-items: center;
+    color: #3c3c3c !important;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.nav-link .material-icons {
+    margin-right: 12px; /* Increased margin for better spacing */
+    font-size: 1.5rem;
+    /* color: black; */
+    text-decoration: none;
+}
+
+
+
+.nav-link:hover {
+    background-color: #7072cd;
+    color: white !important;
+}
+
+/* Section Titles */
+.nav-section {
+    font-size: 0.75rem; /* Smaller font size */
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+/* Mobile Toggle */
+#sidebarToggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        display: none;
+    }
+
+    #sidebarToggle {
+        display: block;
+    }
+
+    .sidebar-open #sidebar {
+        display: block;
+        width: 250px;
+    }
+}
 
 main {
     height: calc(100vh - 56px); /* Adjust for header height */
@@ -69,14 +154,14 @@ main {
     width: 100%;
 }
 
-.card {
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for the effects */
+/* .card {
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Lift the card slightly */
-    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); Add a shadow for depth */
-}
+    transform: translateY(-5px); 
+    
+} */
  .button{
     background-color: #7072cd !important;
  } 

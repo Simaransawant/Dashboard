@@ -42,6 +42,15 @@ const dataBarCustomTooltip = {
   const ctx = document.getElementById('bar-chart-custom-tooltip').getContext('2d');
   new Chart(ctx, dataBarCustomTooltip);
 
-  document.getElementById('sidebarToggle').addEventListener('click', function () {
-    document.getElementById('sidebar').classList.toggle('active');
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('sidebarToggle').addEventListener('click', function() {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('d-none'); // Toggle visibility
+        sidebar.classList.toggle('show'); // If you have a specific 'show' class to control styles
+
+        // Toggle body overflow to prevent scrolling
+        document.body.classList.toggle('sidebar-open');
+    });
 });
+
