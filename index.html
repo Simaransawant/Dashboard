@@ -116,24 +116,27 @@
     </div>
 </div>
 
-            <main class="col-md-12 ms-sm-auto col-lg-10 px-3 " style="height: 100vh; overflow-y: auto;">
+            <main class="col-md-12 ms-sm-auto col-lg-10 px-3  " style="height: 100vh; overflow-y: auto;">
 
-                <header class="d-flex align-items-center justify-content-between p-0">
+                <header class="d-flex align-items-center justify-content-between p-0 mb-3">
 
                     
-                    <button class="btn btn-primary d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar1" aria-controls="sidebar" >
+                    <button class="btn d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar1" aria-controls="sidebar" >
                         ☰
                     </button>
               
                     
-                    <div class="search-bar mx-auto">
-                        <input type="text" class="form-control" placeholder="Search..." style="width: 300px;">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-10 col-xl-12 mx-auto">
+                            <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                        </div>
                     </div>
+                    
                     <div class="d-flex align-items-center">
                         <div class="nav-item dropdown ">
-                            <a class="nav-link bg-body dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link bg-body" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="bootstrap-icons-1.11.3/bell.svg" alt="Notifications" style="width: 26px;">
-                                <span class="badge bg-danger">8</span> 
+                                
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end shadow-lg p-3 mb-5 bg-white rounded" aria-labelledby="navbarDropdown" style="width: 350px;">
                                 <li class="dropdown-header fs-4  fw-bold " style="color: #7b5fe2;">Notifications</li>
@@ -171,8 +174,8 @@
                         </div>
                         
                         <div class="dropdown">
-                            <button class="btn btn-light dropdown-toggle bg-body" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0; border: none;">
-                                <img src="img/profile.png" alt="Profile" class="rounded-circle" style="width: 70px; height: 70px; object-fit: cover;">
+                            <button class="btn btn-light bg-body" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0; border: none;">
+                                <img src="img/profile.png" alt="Profile" class="rounded-circle mt-1" style="width: 60px; height: 50px; object-fit: cover;">
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end mt-2 shadow-lg p-3 mb-5 bg-white rounded" aria-labelledby="profileDropdown" style="min-width: 200px;">
                                 <li class="dropdown-header d-flex align-items-center">
