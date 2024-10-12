@@ -1,255 +1,219 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .sidebar {
-    height: 100vh;
-    
-    /* Remove overflow-y to prevent additional scrollbar */
+  height: 100vh;
 }
 .sidebar {
-    transition: transform 0.3s ease; /* Smooth transition */
+  transition: transform 0.3s ease;
 }
 
 .sidebar.d-none {
-    display: none; /* Hide the sidebar on smaller screens */
+  display: none;
 }
 
 .sidebar.show {
-    display: block; /* Show the sidebar when 'show' class is added */
+  display: block;
 }
 
-/* Optional: Class to control body scrolling */
 body.sidebar-open {
-    overflow: hidden; /* Prevent body scrolling when sidebar is open */
+  overflow: hidden;
 }
 
-
-/* Sidebar Background and Logo */
 #sidebar {
-    height: 100vh;
-    background-color: #f0f4fa;
-    padding: 20px;
-    width: 230px; /* Adjusted to ensure text fits comfortably */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  background-color: #f0f4fa;
+  padding: 20px;
+  width: 230px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
-/* Navigation Links */
 .nav-link {
-    display: flex;
-    align-items: center;
-    color: #3c3c3c !important;
-    font-size: 1rem;
-    padding: 10px 15px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  color: #3c3c3c !important;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .nav-link .material-icons {
-    margin-right: 12px; /* Increased margin for better spacing */
-    font-size: 1.5rem;
-    /* color: black; */
-    text-decoration: none;
+  margin-right: 12px;
+  font-size: 1.5rem;
+  text-decoration: none;
 }
-
-
 
 .nav-link:hover {
-    background-color: #7072cd;
-    color: white !important;
+  background-color: #7072cd;
+  color: white !important;
 }
 
-/* Section Titles */
 .nav-section {
-    font-size: 0.75rem; /* Smaller font size */
-    color: #6c757d;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 20px;
-    margin-left: 15px;
+  font-size: 0.75rem;
+  color: #eeefef;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-left: 15px;
 }
 
-/* Mobile Toggle */
 #sidebarToggle {
-    display: none;
+  display: none;
 }
 
 @media (max-width: 768px) {
-    #sidebar {
-        display: none;
-    }
+  #sidebar {
+    display: none;
+  }
 
-    #sidebarToggle {
-        display: block;
-    }
+  #sidebarToggle {
+    display: block;
+  }
 
-    .sidebar-open #sidebar {
-        display: block;
-        width: 250px;
-    }
+  .sidebar-open #sidebar {
+    display: block;
+    width: 250px;
+  }
 }
 
 main {
-    height: calc(100vh - 56px); /* Adjust for header height */
-    overflow-y: auto; /* Allow scrolling only in main */
+  height: calc(100vh - 56px);
+  overflow-y: auto;
 }
 
-/* For mobile responsiveness */
 @media (max-width: 768px) {
-    #sidebar {
-        display: none; /* Hide sidebar on small screens */
-    }
+  #sidebar {
+    display: none;
+  }
 }
-
 
 .trophy-img {
-    width: 80px; /* Adjusted size for better fit */
-    height: auto; /* Ensure the height adjusts automatically */
-    margin-left: 30px; /* Add some space between the button and the image */
-    margin-bottom: 20px;
-    object-fit: contain;
+  width: 80px;
+  height: auto;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  object-fit: contain;
 }
 
 .view-btn {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .stats .stat-item {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .stat-icon {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .purple-bg {
-    background-color: #e0bbff;
+  background-color: #e0bbff;
 }
 
 .green-bg {
-    background-color: #c8e6c9;
+  background-color: #c8e6c9;
 }
 
 .blue-bg {
-    background-color: #bbdefb;
+  background-color: #bbdefb;
 }
 
 .yellow-bg {
-    background-color: #fff9c4;
+  background-color: #fff9c4;
 }
 
 .chart-container {
-    position: relative;
-    height: 250px; /* Adjust the height as needed */
-    width: 100%;
+  position: relative;
+  height: 250px;
+  width: 100%;
 }
 
-/* .card {
-    transition: transform 0.3s, box-shadow 0.3s;
+.button {
+  background-color: #7072cd !important;
 }
 
-.card:hover {
-    transform: translateY(-5px); 
-    
-} */
- .button{
-    background-color: #7072cd !important;
- } 
-
-/* Add box-shadow and rounded corners to table */
 .table {
-    border-radius: 10px;
-    overflow: hidden;
-    border: none;
-    background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+  background-color: #fff;
 }
-.th{
-    /* background-color: #bbdefb; */
-}
-/* Hover effect on table rows with gradient */
+
 .table-hover tbody tr:hover {
-    background-image: linear-gradient(to right, #f0f0f5, #e0e0f8);
-    transition: background 0.5s ease-in-out;
+  background-image: linear-gradient(to right, #f0f0f5, #e0e0f8);
+  transition: background 0.5s ease-in-out;
 }
 
-/* Badge styles for status */
 .badge {
-    font-size: 0.9rem;
-    padding: 0.6em 1.2em;
-    border-radius: 15px;
-    font-weight: bold;
-    letter-spacing: 0.8px;
-    text-transform: capitalize;
+  font-size: 0.9rem;
+  padding: 0.6em 1.2em;
+  border-radius: 15px;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+  text-transform: capitalize;
 }
 
-/* Table text style */
 thead th {
-    font-weight: bold;
-    background-color: #7072cd !important;
-    color: white;
-    letter-spacing: 1px;
+  font-weight: bold;
+  background-color: #7072cd !important;
+  color: white;
+  letter-spacing: 1px;
 }
 
-/* Table text and padding */
 tbody td {
-    padding: 15px;
-    font-size: 1rem;
-    /* color: #333; */
+  padding: 15px;
+  font-size: 1rem;
 }
 
-/* Table shadows */
 .shadow-lg {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Add slight box shadow to badges */
 .badge {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-/* Smoother transition for hover */
 .table-hover tbody tr {
-    transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
-/* Sidebar styles */
 #sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 200px;
-    transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  transition: all 0.3s ease;
 }
 
-/* Hide sidebar by default on small screens */
 #sidebar.hidden {
-    left: -200px; /* Move it out of the view */
+  left: -200px;
 }
 
-/* Show the sidebar on medium (md) and larger screens */
 @media (max-width: 767px) {
-    #sidebar {
-        left: -200px; /* Hidden on small screens by default */
-    }
-    #sidebar.active {
-        left: 0; /* Show sidebar when active on small screens */
-    }
+  #sidebar {
+    left: -200px;
+  }
+  #sidebar.active {
+    left: 0;
+  }
 }
 
-/* Hamburger icon style */
 #sidebarToggle {
-    position: fixed;
-    top: 10px;
-    left: 10px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
 }

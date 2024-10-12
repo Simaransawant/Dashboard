@@ -8,67 +8,223 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!-- <link rel="stylesheet" href="style1.css"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Dashboard Layout</title>
 </head>
 <body>
     
     
-   <!-- Sidebar -->
-<nav id="sidebar" class="col-md-2 bg-light sidebar d-none d-md-block">
-    <div class="logo text-center">
-        <img src="img/logo.png" alt="Company Logo" style="height: 40px; width: 100%;">
+   <!-- Sidebar fixed-->
+    
+<nav id="sidebar" class=" d-lg-block d-none col-lg-2 bg-body  " >
+    <div class="logo ps-3 pt-3">
+        <img src="img/logo.png" alt="Company Logo" style="height: auto; width: 100%;">
     </div>
     <ul class="nav flex-column mt-4">
         <li class="nav-item">
-            <a class="nav-link active" href="#"><span class="material-icons">home</span> Dashboard</a>
+            <a class="nav-link active d-flex align-items-center" href="#">
+                <span class="material-icons me-3">home</span> Dashboard
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><span class="material-icons">settings</span> Settings</a>
+            <a class="nav-link d-flex align-items-center" href="#">
+                <span class="material-icons me-3">settings</span> Settings
+            </a>
         </li>
-        <div class="nav-section">Pages</div>
+        <li><hr class="dropdown-divider"></li>
+        <div class="nav-section text-secondary">Pages</div>
         <li class="nav-item">
-            <a class="nav-link" href="#"><span class="material-icons">login</span> Login</a>
+            <a class="nav-link d-flex align-items-center" href="#">
+                <span class="material-icons me-3">login</span> Login
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><span class="material-icons">person_add</span> Register</a>
+            <a class="nav-link d-flex align-items-center" href="#">
+                <span class="material-icons me-3">person_add</span> Register
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><span class="material-icons">error</span> Error</a>
+            <a class="nav-link d-flex align-items-center" href="#">
+                <span class="material-icons me-3">error</span> Error
+            </a>
         </li>
-        <div class="nav-section">User Interface</div>
+        <li><hr class="dropdown-divider"></li>
+        <div class="nav-section text-secondary">User Interface</div>
         <li class="nav-item">
-            <a class="nav-link" href="#"><span class="material-icons">text_fields</span> Typography</a>
+            <a class="nav-link d-flex align-items-center" href="#">
+                <span class="material-icons me-3">text_fields</span> Typography
+            </a>
         </li>
     </ul>
+    
+    <div>
+        <img src="img/upgrade-banner-light.png" alt="Upgrade Banner" style="height: 170px; width: 170px;">
+    </div>
 </nav>
 
-<!-- Hamburger Icon for Mobile -->
-<button class="btn btn-primary d-md-none" id="sidebarToggle" style="position: fixed; top: 10px; left: 10px;">
-    ☰
-</button>
-            
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-4 " style="height: 100vh; overflow-y: auto;">
+<div class="offcanvas offcanvas-start d-lg-block bg-light" tabindex="-1" id="sidebar1" aria-labelledby="sidebarLabel">
+    <div class="offcanvas-header d-flex justify-content-between align-items-center">
+        <div class="logo ps-3 pt-2">
+            <img src="img/logo.png" alt="Company Logo" style="height: auto; width: 100%;">
+        </div>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    
+    <div class="offcanvas-body">
+        
+        <ul class="nav flex-column mt-4">
+            <li class="nav-item">
+                <a class="nav-link active d-flex align-items-center fs-5" href="#">
+                    <span class="material-icons me-4 fs-4">home</span> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center fs-5" href="#">
+                    <span class="material-icons me-4 fs-4">settings</span> Settings
+                </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <div class="nav-section text-secondary">Pages</div>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center fs-5" href="#">
+                    <span class="material-icons me-4 fs-4">login</span> Login
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center fs-5" href="#">
+                    <span class="material-icons me-4 fs-4">person_add</span> Register
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center fs-5" href="#">
+                    <span class="material-icons me-4 fs-4">error</span> Error
+                </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <div class="nav-section text-secondary">User Interface</div>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center fs-5" href="#">
+                    <span class="material-icons me-4 fs-4">text_fields</span> Typography
+                </a>
+            </li>
+        </ul>
+        
+        <div>
+            <img src="img/upgrade-banner-light.png" alt="Upgrade Banner" style="height: 400px; width: 360px;">
+        </div>
+        
+    </div>
+</div>
 
-                <header class="d-flex align-items-center justify-content-between p-3">
+            <main class="col-md-12 ms-sm-auto col-lg-10 px-3 " style="height: 100vh; overflow-y: auto;">
+
+                <header class="d-flex align-items-center justify-content-between p-0">
+
+                    
+                    <button class="btn btn-primary d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar1" aria-controls="sidebar" >
+                        ☰
+                    </button>
+              
+                    
                     <div class="search-bar mx-auto">
                         <input type="text" class="form-control" placeholder="Search..." style="width: 300px;">
                     </div>
                     <div class="d-flex align-items-center">
-                        <!-- <button class="btn btn-danger me-2 " id="modeToggle"><i class="fas fa-adjust"></i></button> -->
-                        <div class="dropdown">
-                            <button class="btn btn-light dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="img/profile.png" alt="Profile" class="rounded-circle" style="width: 70px; height: 70px; object-fit: cover;">
-                            </button>
-                            <ul class="dropdown-menu mt-4" aria-labelledby="profileDropdown" >
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
-                                <li><a class="dropdown-item" href="#">Inbox</a></li>
-                                <li><a class="dropdown-item" href="#">Chat</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <div class="nav-item dropdown ">
+                            <a class="nav-link bg-body dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="bootstrap-icons-1.11.3/bell.svg" alt="Notifications" style="width: 26px;">
+                                <span class="badge bg-danger">8</span> 
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow-lg p-3 mb-5 bg-white rounded" aria-labelledby="navbarDropdown" style="width: 350px;">
+                                <li class="dropdown-header fs-4  fw-bold " style="color: #7b5fe2;">Notifications</li>
+                            
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-item">
+                                    <div><strong>Congratulation Flora!</strong></div>
+                                    <div>Won the monthly best seller badge</div>
+                                    <small class="text-muted">Today</small>
+                                </li>
+                        
+                                <li class="dropdown-divider"></li>
+                        
+                                <li class="dropdown-item">
+                                    <div><strong>Yesterday</strong></div>
+                                    <div>New message received</div>
+                                    <div>You have 10 unread messages</div>
+                                    <small class="text-muted">11 Aug</small>
+                                </li>
+                        
+                                <li class="dropdown-divider"></li>
+                        
+                                <li class="dropdown-item">
+                                    <div><strong>Paypal</strong></div>
+                                    <div>Received Payment</div>
+                                    <small class="text-muted">25 May</small>
+                                </li>                             
+                        
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-item text-center">
+                                    <button class="btn" style="background-color: #7b5fe2; color: white;">READ ALL NOTIFICATIONS</button>
+                                    
+                                </li>
                             </ul>
                         </div>
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-light dropdown-toggle bg-body" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0; border: none;">
+                                <img src="img/profile.png" alt="Profile" class="rounded-circle" style="width: 70px; height: 70px; object-fit: cover;">
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end mt-2 shadow-lg p-3 mb-5 bg-white rounded" aria-labelledby="profileDropdown" style="min-width: 200px;">
+                                <li class="dropdown-header d-flex align-items-center">
+                                    <img src="img/profile.png" alt="John Doe" class="rounded-circle me-2" style="width: 70px; height: 70px; object-fit: cover;">
+                                    <div>
+                                        <strong class="fs-5" >John Doe</strong><br>
+                                        <span class="text-muted" style="font-size: 12px;">Admin</span>
+                                    </div>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-person-fill me-3" style="font-size: 18px;"></i>Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-inbox-fill me-3" style="font-size: 18px;"></i>Inbox
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-chat-fill me-3" style="font-size: 18px;"></i>Chat
+                                    </a>
+                                </li>
+                    
+                                <li><hr class="dropdown-divider"></li>
+                        
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-gear-fill me-3" style="font-size: 18px;"></i>Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-tags-fill me-3" style="font-size: 18px;"></i>Pricing
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-question-circle-fill me-3" style="font-size: 18px;"></i>FAQ
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bi bi-box-arrow-right me-3" style="font-size: 18px;"></i>Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
                     </div>
                 </header>
                 
@@ -83,7 +239,6 @@
                                 <b class="mt-4  fs-2 text-success">$42.8k</b>
                                 <div class="d-flex align-items-center">
                                     <button class=" button view-btn btn btn-primary me-3 btn-lg ">View Sales</button>
-                                    <!-- Trophy image next to the button -->
                                     <img src="img/trophy.png" alt="Trophy" class="trophy-img float-end">
                                 </div>
                             </div>
@@ -135,13 +290,10 @@
 
                     <!-- Weekly Overview Card -->
                     <div class="col-md-4 col-sm-12 ">
-                        <!-- <div class="card card shadow  mb-4 bg-white rounded" style="height: 555px;"> -->
                             <div class="card card shadow  bg-white rounded h-100 mb-sm-2">
                             <div class="card-body ">
-                                <!-- Weekly Overview Section -->
                                 <div class="container">
                                     <h3>Weekly Overview</h3>
-                                    <!-- Bar Chart Container -->
                                     <div class="chart-container" style="position: relative; height: 200px; width: 100%;">
                                         <canvas id="bar-chart-custom-tooltip"></canvas>
                                     </div>
@@ -169,10 +321,8 @@
                 
                     <!-- Additional Cards -->
                     <div class="col-md-4 col-sm-12">
-                        <!-- <div class="card card shadow  mb-4 bg-white rounded" style="width: 100%; height: 555px;"> -->
                             <div class="card card shadow   bg-white rounded h-100 " >
                             <div class="card-body ">
-                                <!-- Title and Three Dots Icon -->
                                 <div class="d-flex w-100 pb-3">
                                     <div class="col-10">
                                         <h3 class="card-title " >Total Earning</h3>
@@ -190,20 +340,21 @@
                                 </div>
                                 <p class="card-text  fw-normal mb-4" style="font-size: 11px; ">Compare to $30,000 last year</p>
                     
-                            <!-- Project Details Section -->
                            
                                 <!-- First Row -->
-                                <div class="row  m-0 mb-2 p-2 ps-0 pe-0">
-                                    <div class="col-2 d-flex  align-content-center p-0">
+                                <div class="row m-0 mb-2 p-2 ps-0 pe-0">
+                                    <div class="col-2 d-flex align-content-center p-0">
                                         <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-100 p-1">
                                     </div>
                                     <div class="col-6 p-0 ps-2">
-                                        <h6 class="mb-0 " style="font-size: 14px;">Zipcar</h6>
+                                        <h6 class="mb-0" style="font-size: 14px;">Zipcar</h6>
                                         <p class="m-0 justify-content-center pt-2" style="font-size: 12px;">Vueja, React</p>
                                     </div>
-                                    <div class="col-4 p-0 ">
+                                    <div class="col-4 p-0">
                                         <h6 class="m-0 float-end" style="font-size: 14px;">$22,222.22</h6>
-                                        <p class="m-0 pt-2 float-end" style="font-size: 12px;">Add slider</p>
+                                        <div class="progress mt-2 float-end" style="width: 80%; height: 8px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 80%; background: linear-gradient(to right, #7b5fe2, #b19cd9);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
                                     </div>
                                 </div>
                     
@@ -218,7 +369,9 @@
                                     </div>
                                     <div class="col-4 p-0">
                                         <h6 class="mb-0 float-end" style="font-size: 14px;">$8,650.20</h6>
-                                        <p class="m-0 pt-2 float-end" style="font-size: 12px;">Add slider</p>
+                                        <div class="progress mt-2 float-end" style="width: 80%; height: 8px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 60%; background: linear-gradient(to right, #7b5fe2, #b19cd9);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
                                     </div>
                                 </div>
                     
@@ -233,7 +386,9 @@
                                     </div>
                                     <div class="col-4 p-0">
                                         <h6 class="mb-0 float-end" style="font-size: 14px;">$1,245.80</h6>
-                                        <p class="m-0 pt-2 float-end" style="font-size: 12px;">Add slider</p>
+                                        <div class="progress mt-2 float-end" style="width: 80%; height: 8px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 30%; background: linear-gradient(to right, #7b5fe2, #b19cd9);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -345,7 +500,7 @@
 
                                     <div class="row">
                                         <!-- USA -->
-                                        <div class="row p-0 m-0 mb-2 pt-3 align-items-center"> <!-- Added pt-3 for padding top -->
+                                        <div class="row p-0 m-0 mb-2 pt-3 align-items-center">
                                             <div class="col-3 d-flex justify-content-center align-items-center p-0">
                                                 <img src="img/usa1.png" alt="USA Logo" class="country-logo w-75">
                                             </div>
@@ -456,7 +611,7 @@
                                             <h4 class="mb-4" >Deposit</h4>
                                         </div>
                                         <div class="col-2 align-content-center">
-                                            <p style="font-size: 10px;">View all</p>
+                                            <p style="font-size: 15px;">View all</p>
                                         </div>
                                     </div>
                                     <!-- <h3 class="mb-4 " ></h3> -->
@@ -547,73 +702,73 @@
                                             <h4 class="mb-4" >Withdraw</h4>
                                         </div>
                                         <div class="col-2 align-content-center">
-                                            <p style="font-size: 10px;">View all</p>
+                                            <p style="font-size: 15px;">View all</p>
                                         </div>
                                     </div>
                                     
                                     <div class="row">
-                                        <div class="row p-0 m-0 mb-2 pt-3 align-items-center"> <!-- Added align-items-center for proper alignment -->
+                                        <div class="row p-0 m-0 mb-2 pt-3 align-items-center"> 
                                             <div class="col-3 justify-content-center p-0 d-flex align-items-center">
                                                 <img src="img/google.png" alt="Google Logo" class="country-logo w-75">
                                             </div>
                                             <div class="col-6 p-0">
-                                                <h6 class="mb-0 text-primary small" style="font-size: 1rem;">Google Adsense</h6> <!-- Adjusted font size -->
-                                                <p class="m-0 text-secondary small" style="font-size: 0.9rem;"><i>Paypal deposit</i></p> <!-- Adjusted font size -->
+                                                <h6 class="mb-0 text-primary small" style="font-size: 1rem;">Google Adsense</h6> 
+                                                <p class="m-0 text-secondary small" style="font-size: 0.9rem;"><i>Paypal deposit</i></p> 
                                             </div>
                                             <div class="col-3 p-1">
-                                                <h6 class="m-0 text-danger small" style="font-size: 1rem;">-$145</h6> <!-- Adjusted font size -->
+                                                <h6 class="m-0 text-danger small" style="font-size: 1rem;">-$145</h6> 
                                             </div>
                                         </div>
                     
-                                        <div class="row p-0 m-0 mb-2 pt-3 align-items-center"> <!-- Added align-items-center for proper alignment -->
+                                        <div class="row p-0 m-0 mb-2 pt-3 align-items-center"> 
                                             <div class="col-3 justify-content-center p-0 d-flex align-items-center">
                                                 <img src="img/github.png" alt="GitHub Logo" class="country-logo w-50">
                                             </div>
                                             <div class="col-6 p-0">
-                                                <h6 class="mb-0 text-primary small" style="font-size: 1rem;">GitHub Enterprise</h6> <!-- Adjusted font size -->
-                                                <p class="m-0 text-secondary small" style="font-size: 0.9rem;"><i>Security & compliance</i></p> <!-- Adjusted font size -->
+                                                <h6 class="mb-0 text-primary small" style="font-size: 1rem;">GitHub Enterprise</h6> 
+                                                <p class="m-0 text-secondary small" style="font-size: 0.9rem;"><i>Security & compliance</i></p> 
                                             </div>
                                             <div class="col-3 p-0">
-                                                <h6 class="m-0 text-danger small" style="font-size: 1rem;">-$1870</h6> <!-- Adjusted font size -->
+                                                <h6 class="m-0 text-danger small" style="font-size: 1rem;">-$1870</h6> 
                                             </div>
                                         </div>
                     
-                                        <div class="row p-0 m-0 mb-2 pt-3 align-items-center"> <!-- Added align-items-center for proper alignment -->
+                                        <div class="row p-0 m-0 mb-2 pt-3 align-items-center"> 
                                             <div class="col-3 justify-content-center p-0 d-flex align-items-center">
                                                 <img src="img/slack.png" alt="Slack Logo" class="country-logo w-75">
                                             </div>
                                             <div class="col-6 p-0">
-                                                <h6 class="mb-0 text-primary small" style="font-size: 1rem;">Upgrade Slack Plan</h6> <!-- Adjusted font size -->
-                                                <p class="m-0 text-secondary small" style="font-size: 0.9rem;"><i>Debit card deposit</i></p> <!-- Adjusted font size -->
+                                                <h6 class="mb-0 text-primary small" style="font-size: 1rem;">Upgrade Slack Plan</h6> 
+                                                <p class="m-0 text-secondary small" style="font-size: 0.9rem;"><i>Debit card deposit</i></p> 
                                             </div>
                                             <div class="col-3 p-1">
-                                                <h6 class="m-0 text-danger small" style="font-size: 1rem;">-$450</h6> <!-- Adjusted font size -->
+                                                <h6 class="m-0 text-danger small" style="font-size: 1rem;">-$450</h6> 
                                             </div>
                                         </div>
                     
-                                        <div class="row p-0 m-0 mb-2 pt-3 align-items-center"> <!-- Added align-items-center for proper alignment -->
+                                        <div class="row p-0 m-0 mb-2 pt-3 align-items-center"> 
                                             <div class="col-3 justify-content-center p-0 d-flex align-items-center">
                                                 <img src="img/digital-ocean.png" alt="DigitalOcean Logo" class="country-logo w-75">
                                             </div>
                                             <div class="col-6 p-0">
-                                                <h6 class="mb-0 text-primary small" style="font-size: 1rem;">DigitalOcean</h6> <!-- Adjusted font size -->
-                                                <p class="m-0 text-secondary small" style="font-size: 0.9rem;"><i>Cloud Hosting</i></p> <!-- Adjusted font size -->
+                                                <h6 class="mb-0 text-primary small" style="font-size: 1rem;">DigitalOcean</h6> 
+                                                <p class="m-0 text-secondary small" style="font-size: 0.9rem;"><i>Cloud Hosting</i></p> 
                                             </div>
                                             <div class="col-3 p-1">
-                                                <h6 class="m-0 text-danger small" style="font-size: 1rem;">-$540</h6> <!-- Adjusted font size -->
+                                                <h6 class="m-0 text-danger small" style="font-size: 1rem;">-$540</h6> 
                                             </div>
                                         </div>
                     
-                                        <div class="row p-0 m-0 mb-2 pt-3 align-items-center"> <!-- Added align-items-center for proper alignment -->
+                                        <div class="row p-0 m-0 mb-2 pt-3 align-items-center"> 
                                             <div class="col-3 justify-content-center p-0 d-flex align-items-center">
                                                 <img src="img/aws.png" alt="AWS Logo" class="country-logo w-75 mb-4">
                                             </div>
                                             <div class="col-6 p-0">
-                                                <h6 class="mb-0 text-primary small" style="font-size: 1rem;">AWS Account</h6> <!-- Adjusted font size -->
-                                                <p class="m-0 text-secondary small" style="font-size: 0.9rem;"><i>Choosing a Cloud Platform</i></p> <!-- Adjusted font size -->
+                                                <h6 class="mb-0 text-primary small" style="font-size: 1rem;">AWS Account</h6> 
+                                                <p class="m-0 text-secondary small" style="font-size: 0.9rem;"><i>Choosing a Cloud Platform</i></p> 
                                             </div>
                                             <div class="col-3 p-1">
-                                                <h6 class="m-0 text-danger small" style="font-size: 1rem;">-$21</h6> <!-- Adjusted font size -->
+                                                <h6 class="m-0 text-danger small" style="font-size: 1rem;">-$21</h6> 
                                             </div>
                                         </div>
                                     </div>
@@ -713,7 +868,8 @@
                
                 
                 <footer class="text-center  p-3">
-                    <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+                    <p>&copy; 2024 Created by Simaran @sawant. All Rights Reserved.</p>
+
                 </footer>
             </main>
         </div>

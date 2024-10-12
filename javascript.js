@@ -1,4 +1,4 @@
-// Bar chart with custom tooltip
+
 const dataBarCustomTooltip = {
     type: 'bar',
     data: {
@@ -7,7 +7,7 @@ const dataBarCustomTooltip = {
         {
           label: 'Traffic',
           data: [30, 15, 62, 65, 61, 65, 40],
-          backgroundColor: '#5c6bc0',  // Adjust the color of the bars
+          backgroundColor: '#5c6bc0',  
           borderColor: '#3e4a89',
           borderWidth: 1
         },
@@ -30,26 +30,16 @@ const dataBarCustomTooltip = {
       },
       scales: {
         y: {
-          beginAtZero: true,  // Ensures y-axis starts at 0
+          beginAtZero: true,  
         },
       },
-      responsive: true,  // Keeps the chart responsive
-      maintainAspectRatio: false,  // Allows custom chart size
+      responsive: true,  
+      maintainAspectRatio: false,  
     },
   };
   
-  // Initialize the chart using Chart.js
+ 
   const ctx = document.getElementById('bar-chart-custom-tooltip').getContext('2d');
   new Chart(ctx, dataBarCustomTooltip);
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var sidebarToggle = document.getElementById('sidebarToggle');
-    var sidebar = new bootstrap.Offcanvas(document.getElementById('sidebar')); // Initialize Bootstrap Offcanvas
 
-    sidebarToggle.addEventListener('click', function() {
-        sidebar.toggle(); // Use Bootstrap's toggle method for the off-canvas sidebar
-
-        // Toggle body class to prevent scrolling when the sidebar is open
-        document.body.classList.toggle('sidebar-open');
-    });
-});
