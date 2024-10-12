@@ -41,4 +41,7 @@ const dataBarCustomTooltip = {
   // Initialize the chart using Chart.js
   const ctx = document.getElementById('bar-chart-custom-tooltip').getContext('2d');
   new Chart(ctx, dataBarCustomTooltip);
-  
+
+  document.getElementById('sidebarToggle').addEventListener('click', function () {
+    document.getElementById('sidebar').classList.toggle('active');
+});

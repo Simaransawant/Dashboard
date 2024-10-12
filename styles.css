@@ -68,3 +68,103 @@ main {
     height: 250px; /* Adjust the height as needed */
     width: 100%;
 }
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for the effects */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift the card slightly */
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); Add a shadow for depth */
+}
+ .button{
+    background-color: #7072cd !important;
+ } 
+
+/* Add box-shadow and rounded corners to table */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+    background-color: #fff;
+}
+.th{
+    /* background-color: #bbdefb; */
+}
+/* Hover effect on table rows with gradient */
+.table-hover tbody tr:hover {
+    background-image: linear-gradient(to right, #f0f0f5, #e0e0f8);
+    transition: background 0.5s ease-in-out;
+}
+
+/* Badge styles for status */
+.badge {
+    font-size: 0.9rem;
+    padding: 0.6em 1.2em;
+    border-radius: 15px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+}
+
+/* Table text style */
+thead th {
+    font-weight: bold;
+    background-color: #7072cd !important;
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* Table text and padding */
+tbody td {
+    padding: 15px;
+    font-size: 1rem;
+    /* color: #333; */
+}
+
+/* Table shadows */
+.shadow-lg {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Add slight box shadow to badges */
+.badge {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Smoother transition for hover */
+.table-hover tbody tr {
+    transition: all 0.4s ease-in-out;
+}
+
+/* Sidebar styles */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+/* Hide sidebar by default on small screens */
+#sidebar.hidden {
+    left: -200px; /* Move it out of the view */
+}
+
+/* Show the sidebar on medium (md) and larger screens */
+@media (max-width: 767px) {
+    #sidebar {
+        left: -200px; /* Hidden on small screens by default */
+    }
+    #sidebar.active {
+        left: 0; /* Show sidebar when active on small screens */
+    }
+}
+
+/* Hamburger icon style */
+#sidebarToggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
