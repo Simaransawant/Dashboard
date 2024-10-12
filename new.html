@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Dashboard Layout</title>
+</head>
+<body>
+    
+    
+    <div class="container-fluid  ">
+        <div class="row">
+            <nav id="sidebar" class="col-md-2 d-none d-md-block bg-light sidebar ">
+                <div class="logo">
+                    <img src="logo.png" alt="Company Logo" style="height: 40px;">
+                </div>
+                <h4>Dashboard</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Account Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Error</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-4 " style="height: 100vh; overflow-y: auto;">
+
+                <header class="d-flex align-items-center justify-content-between p-3 bg-light">
+        
+                    <div class="search-bar mx-auto">
+                        <input type="text" class="form-control" placeholder="Search..." style="width: 300px;">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-light me-2" id="modeToggle"><i class="fas fa-adjust"></i></button>
+                        <div class="dropdown">
+                            <button class="btn btn-light dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="profile.jpg" alt="Profile" class="rounded-circle" style="height: 40px;">
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Inbox</a></li>
+                                <li><a class="dropdown-item" href="#">Chat</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+                <div class="row mb-4">
+                    <!-- Card 1: Sales Card -->
+                    <div class="col-md-4">
+                        <div class="small-card sales-card d-flex align-items-center card p-3 card shadow  mb-4 bg-white rounded">
+                            <div class="flex-grow-1">
+                                <h3>Congratulations John!</h3>
+                                <p>Best seller of the month</p>
+                                <b class="mt-4  fs-2 text-success">$42.8k</b>
+                                <div class="d-flex align-items-center">
+                                    <button class="view-btn btn btn-primary me-3 btn-lg ">View Sales</button>
+                                    <!-- Trophy image next to the button -->
+                                    <img src="img/trophy.png" alt="Trophy" class="trophy-img float-end">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Card 2: Statistics Card -->
+                    <div class="col-md-8">
+                        <div class="card shadow  mb-4 bg-white rounded">
+                            <div class="card-body">
+                                <h3>Statistics Card</h3>
+                                <p>Total 48.5% growth 😎 this month</p>
+                                <div class="stats row">
+                                    <div class="stat-item purple-bg col-6 col-md-3 text-center">
+                                        <div class="stat-icon">📈</div>
+                                        <div>
+                                            <h4>Sales</h4>
+                                            <p>245k</p>
+                                        </div>
+                                    </div>
+                                    <div class="stat-item green-bg col-6 col-md-3 text-center">
+                                        <div class="stat-icon">👥</div>
+                                        <div>
+                                            <h4>Customers</h4>
+                                            <p>12.5k</p>
+                                        </div>
+                                    </div>
+                                    <div class="stat-item blue-bg col-6 col-md-3 text-center">
+                                        <div class="stat-icon">📦</div>
+                                        <div>
+                                            <h4>Products</h4>
+                                            <p>1.54k</p>
+                                        </div>
+                                    </div>
+                                    <div class="stat-item yellow-bg col-6 col-md-3 text-center">
+                                        <div class="stat-icon">💰</div>
+                                        <div>
+                                            <h4>Revenue</h4>
+                                            <p>$88k</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <!-- Weekly Overview Card -->
+                    <div class="col-4">
+                        <div class="card card shadow  mb-4 bg-white rounded" style="height: 555px;">
+                            <div class="card-body">
+                                <!-- Weekly Overview Section -->
+                                <div class="container">
+                                    <h3>Weekly Overview</h3>
+                                    <!-- Bar Chart Container -->
+                                    <div class="chart-container" style="position: relative; height: 250px; width: 100%;">
+                                        <canvas id="bar-chart-custom-tooltip"></canvas>
+                                    </div>
+                                    <span style="float: right; margin-top: 10px;">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </span>
+                                </div>
+                
+                                <!-- Sales Performance Section -->
+                                <div class="container mt-4 text-center">
+                                    <b class="fs-1 text-success">45%</b>
+                                    <p>Your sales performance is <br> 😎 better compared to last month</p>
+                                </div>
+                
+                                <!-- Button Section -->
+                                <div class="container d-flex justify-content-center mt-4">
+                                    <button class="button view-btn btn btn-primary btn-lg">DETAILS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Additional Cards -->
+                    <div class="col-4">
+                        <div class="card card shadow  mb-4 bg-white rounded" style="width: 100%; height: 555px;">
+                            <div class="card-body">
+                                <!-- Title and Three Dots Icon -->
+                                <div class="d-flex w-100">
+                                    <div class="col-10">
+                                        <h3 class="card-title">Total Earning</h3>
+                                    </div>
+                                    <div class="col-2 justify-content-center">
+                                        <img src="bootstrap-icons-1.11.3/three-dots-vertical.svg" alt="" class="float-end">
+                                    </div>
+                                </div>
+                    
+                                <!-- Earning Amount and Percentage -->
+                                <div class="d-flex align-items-center">
+                                    <h3 class="card-title pe-2">$2000 <span><img src="bootstrap-icons-1.11.3/caret-up-fill.svg" alt=""></span></h3>
+                                    <p class="text-success mb-0 ps-1">+10%</p>
+                                </div>
+                                <p class="card-text fs-6">Compare to $30,000 last year</p>
+                            </div>
+                    
+                            <!-- Project Details Section -->
+                            <div class="card-body p-0 m-0">
+                                <!-- First Row -->
+                                <div class="row p-0 m-0 mb-2 pt-3">
+                                    <div class="col-3 d-flex justify-content-center p-0">
+                                        <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50">
+                                    </div>
+                                    <div class="col-6 p-0">
+                                        <h6 class="mb-0">Zipcar</h6>
+                                        <p class="m-0">Vueja, React</p>
+                                    </div>
+                                    <div class="col-3 p-0">
+                                        <h6 class="m-0">$22,222.22</h6>
+                                        <p class="m-0">Add slider</p>
+                                    </div>
+                                </div>
+                    
+                                <!-- Second Row -->
+                                <div class="row p-0 m-0 mb-2 pt-2">
+                                    <div class="col-3 d-flex justify-content-center p-0">
+                                        <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50">
+                                    </div>
+                                    <div class="col-6 p-0">
+                                        <h6 class="mb-0">Bitbank</h6>
+                                        <p class="m-0">Sketch, Figma & XD</p>
+                                    </div>
+                                    <div class="col-3 p-0">
+                                        <h6 class="m-0">$8,650.20</h6>
+                                        <p class="m-0">Add slider</p>
+                                    </div>
+                                </div>
+                    
+                                <!-- Third Row -->
+                                <div class="row p-0 m-0 pt-2">
+                                    <div class="col-3 d-flex justify-content-center p-0">
+                                        <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50">
+                                    </div>
+                                    <div class="col-6 p-0">
+                                        <h6 class="mb-0">Aviato</h6>
+                                        <p class="m-0">HTML & Angular</p>
+                                    </div>
+                                    <div class="col-3 p-0">
+                                        <h6 class="m-0">$1,245.80</h6>
+                                        <p class="m-0">Add slider</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                
+                    <div class="col-4">
+                        <div class="row">
+                            <!-- Card 1 -->
+                            <div class="col-6 mb-3">
+                                <div class="card shadow mb-4 bg-white rounded">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <img src="bootstrap-icons-1.11.3/bar-chart-fill.svg" class="p-0 m-0" alt="">
+                                            </div>
+                                            <div class="col-3">
+                                                <img src="bootstrap-icons-1.11.3/three-dots-vertical.svg" class="p-0 m-0 float-end" alt="">
+                                            </div>
+                                        </div>
+                                        <h5 class="card-title">Total Profit</h5>
+                                        <p class="card-text">50rs <sup class="text-success">+42%</sup></p>
+                                        <p class="card-text">Weekly Profit</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Card 2 -->
+                            <div class="col-6 mb-3">
+                                <div class="card shadow mb-4 bg-white rounded">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <img src="bootstrap-icons-1.11.3/currency-dollar.svg" class="p-0 m-0" alt="">
+                                            </div>
+                                            <div class="col-3">
+                                                <img src="bootstrap-icons-1.11.3/three-dots-vertical.svg" class="p-0 m-0 float-end" alt="">
+                                            </div>
+                                        </div>
+                                        <h5 class="card-title">Refund</h5>
+                                        <p class="card-text">50 rs <sup class="text-danger">-42%</sup></p>
+                                        <p class="card-text">Past month</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Card 3 -->
+                            <div class="col-6 mb-3">
+                                <div class="card shadow mb-4 bg-white rounded">
+                                    <div class="card-body ">
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <img src="bootstrap-icons-1.11.3/archive-fill.svg" class="p-0 m-0" alt="">
+                                            </div>
+                                            <div class="col-3">
+                                                <img src="bootstrap-icons-1.11.3/three-dots-vertical.svg" class="p-0 m-0 float-end" alt="">
+                                            </div>
+                                        </div>
+                                        <h5 class="card-title">New Project</h5>
+                                        <p class="card-text">500 <sup class="text-danger">-42%</sup></p>
+                                        <p class="card-text">Yearly Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Card 4 -->
+                            <div class="col-6 mb-3">
+                                <div class="card shadow mb-4 bg-white rounded">
+                                    <div class="card-body pb-1">
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <img src="bootstrap-icons-1.11.3/question-circle-fill.svg" class="p-0 m-0" alt="">
+                                            </div>
+                                            <div class="col-3">
+                                                <img src="bootstrap-icons-1.11.3/three-dots-vertical.svg" class="p-0 m-0 float-end" alt="">
+                                            </div>
+                                        </div>
+                                        <h5 class="card-title">Sales Queries</h5>
+                                        <p class="card-text">11 <sup class="text-danger">-18%</sup></p>
+                                        <p class="card-text ">Weekly Profit</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-4">
+                    <div class="col-4">
+                        <div class="card card shadow mb-4 bg-white rounded" style="height: 600px;">
+                            <div class="card-body">
+                                <div class="container big-card">
+                                    <h3 class="mb-4">Sales by Countries</h3>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ul class="list-unstyled">
+                                                <li class="d-flex align-items-center mb-3">
+                                                    <img src="img/usa1.png" alt="USA Logo" class="country-logo me-3 w-25"> <!-- This sets the image width to 25% of its parent -->
+
+                                                    <div>
+                                                        <p class="mb-1 text-success">$8,656k</p>
+                                                        <p class="mb-1 text-danger">25.8%</p>
+                                                        <p class="mb-0"><b>USA:</b> <i>894k Sales</i></p>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex align-items-center mb-3">
+                                                    <img src="img/uk.png" alt="UK Logo" class="country-logo me-3 w-25">
+                                                    <div>
+                                                        <p class="mb-1 text-success">$2,415k</p>
+                                                        <p class="mb-1 text-danger">6.2%</p>
+                                                        <p class="mb-0"><b>UK:</b><i>645k Sales</i></p>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex align-items-center mb-3">
+                                                    <img src="img/india.png" alt="India Logo" class="country-logo me-3 w-25">
+                                                    <div>
+                                                        <p class="mb-1 text-success">$865k</p>
+                                                        <p class="mb-1 text-danger">12.4%</p>
+                                                        <p class="mb-0"><b>India:</b> <i>148k Sales</i></p>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex align-items-center mb-3">
+                                                    <img src="img/japan2.png" alt="Japan Logo" class="country-logo me-3 w-25">
+                                                    <div>
+                                                        <p class="mb-1 text-success">$745k</p>
+                                                        <p class="mb-1 text-danger">11.9%</p>
+                                                        <p class="mb-0"><b>Japan:</b> <i>86k Sales</i></p>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex align-items-center mb-3">
+                                                    <img src="img/circle-flag-of-south-korea-free-png.png" alt="Korea Logo" class="country-logo me-3 w-25">
+                                                    <div>
+                                                        <p class="mb-1 text-success">$45k</p>
+                                                        <p class="mb-1 text-danger">16.2%</p>
+                                                        <p class="mb-0"><b>Korea:</b> <i>42k Sales</i></p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card card shadow mb-4 bg-white rounded" style="height: 600px;">
+                            <div class="card-body">
+                                <div class="container big-card">
+                                    <h3 class="mb-4">Deposit</h3>
+                                    <div class="row">
+                                        <div class="row p-0 m-0 mb-2 pt-3">
+                                            <div class="col-3  justify-content-center p-0">
+                                                <!-- <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50"> -->
+                                                <img src="img/gumroad.png" alt="gumroad Logo" class="country-logo  w-75">
+                                            </div>
+                                            <div class="col-6 p-0">
+                                                <h6 class="mb-0 text-primary">Gumroad Account</h6>
+                                                <p class="m-0 text-secondary"><i>Sell UI Kit</i></p>
+                                            </div>
+                                            <div class="col-3 p-1 ">
+                                                <h6 class="m-0 text-success">+$4,650</h6>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="row p-0 m-0 mb-2 pt-3">
+                                            <div class="col-3  justify-content-center p-0">
+                                                <!-- <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50"> -->
+                                                <img src="img/mastercard-label.png" alt="mastercard Logo" class="country-logo  w-75">
+                                            </div>
+                                            <div class="col-6 p-0">
+                                                <h6 class="mb-0 text-primary">Mastercard</h6>
+                                                <p class="m-0 text-secondary"><i>Wallet deposit</i></p>
+                                            </div>
+                                            <div class="col-3 p-0 ">
+                                                <h6 class="m-0 text-success">+$92,705</h6>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="row p-0 m-0 mb-2 pt-3">
+                                            <div class="col-3  justify-content-center p-0">
+                                                <!-- <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50"> -->
+                                                <img src="img/stripe.png" alt="stripe Logo" class="country-logo  w-50">
+                                            </div>
+                                            <div class="col-6 p-0">
+                                                <h6 class="mb-0 text-primary">Stripe Account</h6>
+                                                <p class="m-0 text-secondary"><i>iOS Application</i></p>
+                                            </div>
+                                            <div class="col-3 p-1 ">
+                                                <h6 class="m-0 text-success">+$957</h6>
+                                                
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row p-0 m-0 mb-2 pt-3">
+                                            <div class="col-3  justify-content-center p-0">
+                                                <!-- <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50"> -->
+                                                <img src="img/american-bank.png" alt="american Logo" class="country-logo  w-75">
+                                            </div>
+                                            <div class="col-6 p-0">
+                                                <h6 class="mb-0 text-primary">American Bank</h6>
+                                                <p class="m-0 text-secondary"><i>Bank Transfer</i></p>
+                                            </div>
+                                            <div class="col-3 p-1 ">
+                                                <h6 class="m-0 text-success">+$6,837</h6>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="row p-0 m-0 mb-2 pt-3">
+                                            <div class="col-3  justify-content-center p-0">
+                                                <!-- <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50"> -->
+                                                <img src="img/citi-bank.png" alt="citibank Logo" class="country-logo  w-75">
+                                            </div>
+                                            <div class="col-6 p-0">
+                                                <h6 class="mb-0 text-primary">Bank Account</h6>
+                                                <p class="m-0 text-secondary"><i>Wallet deposit</i></p>
+                                            </div>
+                                            <div class="col-3 p-1 ">
+                                                <h6 class="m-0 text-success">+$446</h6>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card card shadow mb-4 bg-white rounded" style="height: 600px;">
+                            <div class="card-body">
+                                <div class="container big-card">
+                                    <h3 class="mb-4">Withdraw</h3>
+                                    <div class="row">
+                                        <div class="row p-0 m-0 mb-2 pt-3">
+                                            <div class="col-3  justify-content-center p-0">
+                                                <!-- <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50"> -->
+                                                <img src="img/google.png" alt="gumroad Logo" class="country-logo  w-75">
+                                            </div>
+                                            <div class="col-6 p-0">
+                                                <h6 class="mb-0 text-primary">Google Adsense</h6>
+                                                <p class="m-0 text-secondary"><i>Paypal deposit</i></p>
+                                            </div>
+                                            <div class="col-3 p-1 ">
+                                                <h6 class="m-0 text-danger">-$145</h6>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="row p-0 m-0 mb-2 pt-3">
+                                            <div class="col-3  justify-content-center p-0">
+                                                <!-- <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50"> -->
+                                                <img src="img/github.png" alt="mastercard Logo" class="country-logo  w-75">
+                                            </div>
+                                            <div class="col-6 p-0">
+                                                <h6 class="mb-0 text-primary">Github Enterprise</h6>
+                                                <p class="m-0 text-secondary"><i>Security & compliance</i></p>
+                                            </div>
+                                            <div class="col-3 p-0 ">
+                                                <h6 class="m-0 text-danger">-$1870</h6>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="row p-0 m-0 mb-2 pt-3">
+                                            <div class="col-3  justify-content-center p-0">
+                                                <!-- <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50"> -->
+                                                <img src="img/slack.png" alt="stripe Logo" class="country-logo  w-50">
+                                            </div>
+                                            <div class="col-6 p-0">
+                                                <h6 class="mb-0 text-primary">Upgrade Slack Plan</h6>
+                                                <p class="m-0 text-secondary"><i>Debit card deposit</i></p>
+                                            </div>
+                                            <div class="col-3 p-1 ">
+                                                <h6 class="m-0 text-danger">-$450</h6>
+                                                
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row p-0 m-0 mb-2 pt-3">
+                                            <div class="col-3  justify-content-center p-0">
+                                                <!-- <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50"> -->
+                                                <img src="img/digital-ocean.png" alt="american Logo" class="country-logo  w-75">
+                                            </div>
+                                            <div class="col-6 p-0">
+                                                <h6 class="mb-0 text-primary">Digital ocean</h6>
+                                                <p class="m-0 text-secondary"><i>Cloud Hosting</i></p>
+                                            </div>
+                                            <div class="col-3 p-1 ">
+                                                <h6 class="m-0 text-danger">-$540</h6>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="row p-0 m-0 mb-2 pt-3">
+                                            <div class="col-3  justify-content-center p-0">
+                                                <!-- <img src="bootstrap-icons-1.11.3/1-circle-fill.svg" alt="" class="w-50"> -->
+                                                <img src="img/aws.png" alt="citibank Logo" class="country-logo  w-75">
+                                            </div>
+                                            <div class="col-6 p-0">
+                                                <h6 class="mb-0 text-primary">AWS Account</h6>
+                                                <p class="m-0 text-secondary"><i>Choosing a Cloud Platform</i></p>
+                                            </div>
+                                            <div class="col-3 p-1 ">
+                                                <h6 class="m-0 text-danger">-$21</h6>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="table-responsive mb-4">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Date</th>
+                                        <th>Salary</th>
+                                        <th>Age</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>John Doe</td>
+                                        <td>john@example.com</td>
+                                        <td>2024-10-01</td>
+                                        <td>$50000</td>
+                                        <td>30</td>
+                                        <td>Active</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Emily Davis</td>
+                                        <td>emily@example.com</td>
+                                        <td>2024-10-08</td>
+                                        <td>$7000</td>
+                                        <td>25</td>
+                                        <td><span class="status-active">Active</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Michael Brown</td>
+                                        <td>michael@example.com</td>
+                                        <td>2024-10-09</td>
+                                        <td>$5500</td>
+                                        <td>30</td>
+                                        <td><span class="status-active">Active</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jane Smith</td>
+                                        <td>jane@example.com</td>
+                                        <td>2024-10-10</td>
+                                        <td>$6000</td>
+                                        <td>32</td>
+                                        <td><span class="status-inactive">Inactive</span></td>
+                                    </tr>
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+               
+                
+                <footer class="text-center bg-light p-3">
+                    <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+                </footer>
+            </main>
+        </div>
+        
+    </div>
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="javascript.js"></script>
+</body>
+</html>
